@@ -10,8 +10,7 @@ Documentations
 <div class="flex three demo">
 
     {% for doc in DOCS %}
-    <article>
-
+    <article data-slug='{{doc.slug}}'>
         <h4>{{ doc.title }} ({{ doc.date }})</h4>
         <p>{{ doc.summary}}</p>
         <a href="DOCS/{{ doc.slug }}.html">read more...</a>
