@@ -18,7 +18,7 @@ ex:
 
     md2site run --content=./content --output=./output --log=./logs
 
-## Formato dei metadati
+## Metadata
 
 the system supports the following metadata format:
 
@@ -30,6 +30,11 @@ the system supports the following metadata format:
     summary:
     slug:
     ---
+
+## Examples
+
+some AI generated articles are available as sample md files in the directory: **examples_of_mds**
+and are also visible on the site: https://michelangelo.altervista.org/md2ex
 
 ## Disclaimer
 
