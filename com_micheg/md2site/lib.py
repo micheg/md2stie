@@ -25,7 +25,6 @@ class Staticizer:
         if not isExist:
             os.makedirs(self.output_dir)
         # loading templates
-        import pdb; pdb.set_trace()
         self.env = self.load_templates()
         # parsing documents
         self.DOCS = self.read_all_items()
