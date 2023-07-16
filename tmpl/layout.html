@@ -11,6 +11,8 @@
         img.icon { display: inline; width: 1rem;}
         article h4 {padding: 0; margin: 0;}
         #text {width:100%;}
+        mark {cursor: pointer;}
+        #current_search {display: none;}
     </style>
     <title>{% block title %} {% endblock %}</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -58,22 +60,7 @@
         {% block date %} {% endblock %}
 	</header>
     <main>
-        <details id="sarchbox">
-            <summary>Search</summary>
-            <p>
-                <form>
-                    <p>
-                        <input id="text" type="text" name="search">
-                        <br/>
-                        <button id="btn_search">Search</button>
-                        <button id="btn_reset" type="reset">Reset</button>
-                    </p>
-                </form>
-            </p>
-        </details>
-        <section>
-            {% block content %} {% endblock %}
-        </section>
+        {% block content %} {% endblock %}
     </main>
     <footer>
         <p>

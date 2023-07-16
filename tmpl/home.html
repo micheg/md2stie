@@ -7,7 +7,22 @@ Documentations
 
 {% block content %}
 
-<div class="flex three demo">
+<details id="sarchbox" open>
+    <summary>Search</summary>
+    <p>
+    <form>
+        <p>
+            <input id="text" type="text" name="search">
+            <br />
+            <button id="btn_search">Search</button>
+            <button id="btn_reset" type="reset">Reset</button>
+        </p>
+    </form>
+    </p>
+</details>
+
+<div>
+    <section id="current_search">Current term: <span id="term"></span></section>
 
     {% for doc in DOCS %}
     <article data-slug='{{doc.slug}}'>
@@ -17,7 +32,7 @@ Documentations
         <hr />
         {% set list_of_tags = doc.tags.split(",") %}
         {% for tag in list_of_tags %}
-        <mark>#{{ tag|trim }}</mark>
+        <mark class="tag">#{{ tag|trim }}</mark>
         {% endfor %}
     </article>
 
