@@ -4,11 +4,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block css %} {% endblock %}
     <title>{% block title %} {% endblock %}</title>
+    <base href="{% block basepath %} {% endblock %}">
+
+    <link rel="stylesheet" href="static/css/simple.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.js" integrity="sha512-yKwv5WRe/jXGAmdSARB9Hs6MACkXT3Al5ytTPhbDc+tmUG4no7+TMHERFOVMI+VSxF8eUosSnlRJSUd5hblFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {% block js %} {% endblock %}
+    <script src="static/js/main.js"></script>
 </head>
 
 <body>
@@ -16,31 +20,31 @@
 		<nav>
 			<ul>
 				<li>
-                    <a href="{% block homelink %} {% endblock %}">
+                    <a href="index.html">
                         Home
                     </a>
                 </li>
 				<li>
                     <a href="https://micheg.blogspot.com/">
-                        <img class="icon" src="/static/icons/blogger.svg" alt="Blog"/>
+                        <img class="icon" src="static/icons/blogger.svg" alt="Blog"/>
                         Blog
                     </a>
                 </li>
 				<li>
                     <a href="https://github.com/micheg">
-                        <img class="icon" src="/static/icons/github.svg" alt="Github"/>
+                        <img class="icon" src="static/icons/github.svg" alt="Github"/>
                         Github
                     </a>
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/michelangelogiacomelli/">
-                        <img class="icon" src="/static/icons/linkedin.svg" alt="Linkedin"/>
+                        <img class="icon" src="static/icons/linkedin.svg" alt="Linkedin"/>
                         Linkedin
                     </a>
                 </li>
                 <li>
                     <a href="https://twitter.com/michelangelog/">
-                        <img class="icon" src="/static/icons/twitter.svg" alt="twitter"/>
+                        <img class="icon" src="static/icons/twitter.svg" alt="twitter"/>
                         Twitter
                     </a>
                 </li>

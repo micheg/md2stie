@@ -27,10 +27,9 @@ $(function ()
 {
     $('#sarchbox').hide();
     $.ajax({
-        url: '/data.json'
+        url: 'data.json'
     }).done(function (data)
     {
-        console.log(data);
         window.$IDX = lunr(function ()
         {
             this.field('title');

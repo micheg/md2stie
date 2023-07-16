@@ -79,5 +79,6 @@ def main():
         except:
             LOG.error(f'something has gone very wrong')
         lock.close()
+        os.remove(lock_file)
 
     return 0

@@ -4,17 +4,9 @@
 Documentations
 {% endblock %}
 
-{% block css %}
-    <link rel="stylesheet" href="./static/css/simple.min.css">
-    <link rel="stylesheet" href="./static/css/style.css">
-{% endblock %}
 
-{% block js %}
-    <script src="./static/js/main.js"></script>
-{% endblock %}
-
-{% block homelink %}
-./index.html
+{% block basepath %}
+./
 {% endblock %}
 
 {% block content %}
@@ -40,7 +32,7 @@ Documentations
     <article data-slug='{{doc.slug}}'>
         <h4>{{ doc.title }} ({{ doc.date }})</h4>
         <p>{{ doc.summary}}</p>
-        <a href="./article/{{ doc.slug }}.html">read more...</a>
+        <a href="article/{{ doc.slug }}.html">read more...</a>
         <hr />
         {% set list_of_tags = doc.tags.split(",") %}
         {% for tag in list_of_tags %}

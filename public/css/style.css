@@ -1,0 +1,7 @@
+body > footer {grid-column: 1 / -1;}
+.published { position: absolute; right: 1em; }
+img.icon { display: inline; width: 1rem;}
+article h4 {padding: 0; margin: 0;}
+#text {width:100%;}
+mark {cursor: pointer;}
+#current_search {display: none;}
