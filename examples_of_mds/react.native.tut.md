@@ -25,23 +25,23 @@ React Native is an open-source framework developed by Facebook that allows you t
 1. Creating a new React Native project:
 Open your terminal and run the following command to create a new React Native project:
 
-    ```
-    npx react-native init ProjectName
-    cd ProjectName
+```
+npx react-native init ProjectName
+cd ProjectName
 ```
 
 2. Running the app on an emulator/device:
 
 - To run the app on an Android emulator:
 
-        ```
-        npx react-native run-android
-        ```
+```
+npx react-native run-android
+```
 
 - To run the app on an iOS emulator:
-        ```
-        npx react-native run-ios
-        ```
+```
+npx react-native run-ios
+```
 
 1. Project structure:
 The generated React Native project will have a basic structure that includes files such as `App.js` (the entry point of the app), `index.js` (app initialization), and an `android` folder (containing files specific to Android) and `ios` folder (containing files specific to iOS).
@@ -52,20 +52,20 @@ The generated React Native project will have a basic structure that includes fil
 In React Native, components are used to define the user interface of the app. Here's an example of creating a component:
 
 
-        ```javascript
-        import React from 'react';
-        import { View, Text } from 'react-native';
+```javascript
+import React from 'react';
+import { View, Text } from 'react-native';
 
-        const App = () => {
-        return (
-            <View>
-            <Text>Hello, world!</Text>
-            </View>
-        );
-        };
+const App = () => {
+return (
+    <View>
+    <Text>Hello, world!</Text>
+    </View>
+);
+};
 
-        export default App;
-        ```
+export default App;
+```
 
 2. Using prebuilt components:
 React Native provides a set of prebuilt components that can be used to create the app's user interface. For example, `View` is used as a container for elements, `Text` is used to display text, `Button` is used for buttons, and so on. You can import and use these components in your code.
@@ -74,54 +74,54 @@ React Native provides a set of prebuilt components that can be used to create th
 React Native uses inline styles, similar to CSS, to apply styles to components. You can use the `StyleSheet` component to define styles and apply them to components. For example:
 
 
-        ```javascript
-        import React from 'react';
-        import { View, Text, StyleSheet } from 'react-native';
+```javascript
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-        const App = () => {
-        return (
-            <View style={styles.container}>
-            <Text style={styles.text}>Hello, world!</Text>
-            </View>
-        );
-        };
+const App = () => {
+return (
+    <View style={styles.container}>
+    <Text style={styles.text}>Hello, world!</Text>
+    </View>
+);
+};
 
-        const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-        },
-        text: {
-            fontSize: 20,
-            fontWeight: 'bold',
-        },
-        });
+const styles = StyleSheet.create({
+container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
+text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+},
+});
 
-        export default App;
-        ```
+export default App;
+```
 
 4. Handling events:
 You can handle events for interactive elements using callback functions. For example, to handle a button click, you can use the `onPress` prop. Here's an example:
 
-        ```javascript
-        import React from 'react';
-        import { View, Button, Alert } from 'react-native';
+```javascript
+import React from 'react';
+import { View, Button, Alert } from 'react-native';
 
-        const App = () => {
-        const showAlert = () => {
-            Alert.alert('You clicked the button!');
-        };
+const App = () => {
+const showAlert = () => {
+    Alert.alert('You clicked the button!');
+};
 
-        return (
-            <View>
-            <Button title="Click Me" onPress={showAlert} />
-            </View>
-        );
-        };
+return (
+    <View>
+    <Button title="Click Me" onPress={showAlert} />
+    </View>
+);
+};
 
-        export default App;
-        ```
+export default App;
+```
 
 5. Custom components:
 You can create and use your own custom components within your React Native app. Simply create a new file for the component and import it where needed. You can also pass data or functions as props to custom components.
@@ -131,9 +131,9 @@ You can create and use your own custom components within your React Native app. 
 1. Installing a navigation library:
 To enable navigation between different screens in your app, you can use a navigation library like `React Navigation`. You can install it in your React Native project by running the following command:
 
-        ```
-        npm install @react-navigation/native
-        ```
+```
+npm install @react-navigation/native
+```
 
 2. Configuring the navigation library:
 Follow the installation and configuration instructions for `React Navigation` from their official documentation to set up the navigation library in your project. You'll also need to install a specific navigation navigator like `React Navigation Stack` or `React Navigation Bottom Tabs` based on your requirements.
@@ -144,36 +144,36 @@ In your project, create separate screens as React Native components for differen
 4. Example usage of React Navigation:
 Here's an example of using `React Navigation` to create a basic stack-based navigation:
 
-        ```javascript
-        import React from 'react';
-        import { NavigationContainer } from '@react-navigation/native';
-        import { createStackNavigator } from '@react-navigation/stack';
+```javascript
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-        const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
-        const HomeScreen = () => (
-        <View>
-            <Text>Home Screen</Text>
-        </View>
-        );
+const HomeScreen = () => (
+<View>
+    <Text>Home Screen</Text>
+</View>
+);
 
-        const DetailsScreen = () => (
-        <View>
-            <Text>Details Screen</Text>
-        </View>
-        );
+const DetailsScreen = () => (
+<View>
+    <Text>Details Screen</Text>
+</View>
+);
 
-        const App = () => (
-        <NavigationContainer>
-            <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Details" component={DetailsScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
-        );
+const App = () => (
+<NavigationContainer>
+    <Stack.Navigator>
+    <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Screen name="Details" component={DetailsScreen} />
+    </Stack.Navigator>
+</NavigationContainer>
+);
 
-        export default App;
-        ```
+export default App;
+```
 
 In this example, we're creating two screens, `HomeScreen` and `DetailsScreen`. The screens are then registered in the navigation stack using `createStackNavigator`. Finally, the `NavigationContainer` component is used as the main container for the routes.
 
@@ -186,36 +186,36 @@ To make HTTP requests from a React Native app, you can use libraries like `axios
 2. Example HTTP request using `axios`:
 To use `axios`, you need to install it in your project by running the following command:
 
-        ```
-        npm install axios
-        ```
+```
+npm install axios
+```
 
 Here's an example of using `axios` to make a GET request:
 
-        ```javascript
-        import React, { useEffect } from 'react';
-        import axios from 'axios';
+```javascript
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
-        const App = () => {
-        useEffect(() => {
-            axios.get('https://api.example.com/data')
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        }, []);
+const App = () => {
+useEffect(() => {
+    axios.get('https://api.example.com/data')
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+}, []);
 
-        return (
-            <View>
-            {/* User interface */}
-            </View>
-        );
-        };
+return (
+    <View>
+    {/* User interface */}
+    </View>
+);
+};
 
-        export default App;
-        ```
+export default App;
+```
 
 In this example, we're making a GET request to the URL `'https://api.example.com/data'`. The response is handled inside the `useEffect` hook.
 

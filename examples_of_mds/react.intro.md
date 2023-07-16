@@ -25,23 +25,23 @@ To get started with React, you'll need Node.js and npm (Node Package Manager) in
 
 *Step 2:* Run the following command to create a new React project using the Create React App tool:
 
-    ```bash
-    npx create-react-app my-react-app
-    ```
+```bash
+npx create-react-app my-react-app
+```
 
 This command will create a new directory called "my-react-app" with the basic files and folder structure for a React project.
 
 *Step 3:* Once the project is created, navigate to the project directory:
 
-    ```bash
-    cd my-react-app
-    ```
+```bash
+cd my-react-app
+```
 
 *Step 4:* Start the development server by running the following command:
 
-    ```bash
-    npm start
-    ```
+```bash
+npm start
+```
 
 This will launch the development server and open your React application in a web browser. You can now begin building your React components.
 
@@ -53,19 +53,20 @@ React applications are built using reusable components. Components are JavaScrip
 
 *Step 2:* Replace the existing code with the following:
 
-    ```javascript
-    import React from 'react';
+```javascript
+import React from 'react';
 
-    function App() {
+function App()
+{
     return (
         <div>
-        <h1>Hello, React!</h1>
+            <h1>Hello, React!</h1>
         </div>
     );
-    }
+}
 
-    export default App;
-    ```
+export default App;
+```
 
 This code defines a functional component named `App` that returns a `<div>` element containing an `<h1>` heading.
 
@@ -78,19 +79,19 @@ One of the key benefits of React is the ability to create reusable components. L
 
 *Step 2:* Add the following code to the `Greeting.js` file:
 
-    ```javascript
-    import React from 'react';
+```javascript
+import React from 'react';
 
-    function Greeting(props) {
-    return (
-        <div>
-        <h2>Welcome, {props.name}!</h2>
-        </div>
-    );
-    }
+function Greeting(props) {
+return (
+    <div>
+    <h2>Welcome, {props.name}!</h2>
+    </div>
+);
+}
 
-    export default Greeting;
-    ```
+export default Greeting;
+```
 
 This code defines a functional component named `Greeting` that accepts a `name` prop and displays a personalized greeting.
 
@@ -98,21 +99,21 @@ This code defines a functional component named `Greeting` that accepts a `name` 
 
 *Step 4:* Import the `Greeting` component by adding the following line at the top:
 
-    ```javascript
-    import Greeting from './Greeting';
-    ```
+```javascript
+import Greeting from './Greeting';
+```
 
 *Step 5:* Replace the existing JSX code in the `App` component's return statement with the following:
 
-    ```javascript
-    return (
-    <div>
-        <h1>Hello, React!</h1>
-        <Greeting name="John" />
-        <Greeting name="Jane" />
-    </div>
-    );
-    ```
+```javascript
+return (
+<div>
+    <h1>Hello, React!</h1>
+    <Greeting name="John" />
+    <Greeting name="Jane" />
+</div>
+);
+```
 
 This code uses the `Greeting` component twice, passing different names as props.
 

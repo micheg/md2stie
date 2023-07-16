@@ -41,72 +41,72 @@ Flexbox allows you to control how elements within the container resize and expan
 1. Simple Grid
 To create a simple grid using Flexbox, you can set the flow direction of the flex container to `row` and use element resizing to define the desired number of columns. For example:
 
-        ```javascript
-        import React from 'react';
-        import { View, StyleSheet } from 'react-native';
+```javascript
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
-        const App = () => {
-        return (
-            <View style={styles.container}>
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
-            </View>
-        );
-        };
+const App = () => {
+return (
+    <View style={styles.container}>
+    <View style={styles.item} />
+    <View style={styles.item} />
+    <View style={styles.item} />
+    <View style={styles.item} />
+    </View>
+);
+};
 
-        const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-        },
-        item: {
-            width: '50%',
-            height: 100,
-            backgroundColor: 'red',
-        },
-        });
+const styles = StyleSheet.create({
+container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+},
+item: {
+    width: '50%',
+    height: 100,
+    backgroundColor: 'red',
+},
+});
 
-        export default App;
-        ```
+export default App;
+```
 
 In this example, we have a flex container (`container`) with a `row` flow direction and enabled wrapping of elements using `flexWrap: 'wrap'`. The elements (`item`) within the container have a width of 50% relative to the parent container, creating a two-column grid.
 
 2. Flexible Layout
 To create a flexible layout using Flexbox, you can leverage alignment and element resizing properties. Here's an example:
 
-        ```javascript
-        import React from 'react';
-        import { View, StyleSheet } from 'react-native';
+```javascript
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
-        const App = () => {
-        return (
-            <View style={styles.container}>
-            <View style={styles.sidebar} />
-            <View style={styles.content} />
-            </View>
-        );
-        };
+const App = () => {
+return (
+    <View style={styles.container}>
+    <View style={styles.sidebar} />
+    <View style={styles.content} />
+    </View>
+);
+};
 
-        const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            flexDirection: 'row',
-        },
-        sidebar: {
-            flex: 1,
-            backgroundColor: 'blue',
-        },
-        content: {
-            flex: 2,
-            backgroundColor: 'green',
-        },
-        });
+const styles = StyleSheet.create({
+container: {
+    flex: 1,
+    flexDirection: 'row',
+},
+sidebar: {
+    flex: 1,
+    backgroundColor: 'blue',
+},
+content: {
+    flex: 2,
+    backgroundColor: 'green',
+},
+});
 
-        export default App;
-        ```
+export default App;
+```
 
 In this example, we have a flex container (`container`) with a `row` flow direction. Within the container, we have a sidebar area (`sidebar`) and a main content area (`content`). By using the `flex` property on the children, we allocate more space to the content area (`flex: 2`) compared to the sidebar area (`flex: 1`).
 

@@ -4,20 +4,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/static/css/simple.min.css">
-    <style>
-        body > footer {grid-column: 1 / -1;}
-        .published { position: absolute; right: 1em; }
-        img.icon { display: inline; width: 1rem;}
-        article h4 {padding: 0; margin: 0;}
-        #text {width:100%;}
-        mark {cursor: pointer;}
-        #current_search {display: none;}
-    </style>
+    {% block css %} {% endblock %}
     <title>{% block title %} {% endblock %}</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.js" integrity="sha512-yKwv5WRe/jXGAmdSARB9Hs6MACkXT3Al5ytTPhbDc+tmUG4no7+TMHERFOVMI+VSxF8eUosSnlRJSUd5hblFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/static/js/main.js"></script>
+    {% block js %} {% endblock %}
 </head>
 
 <body>
@@ -25,7 +16,7 @@
 		<nav>
 			<ul>
 				<li>
-                    <a href="https://michelangelo.altervista.org/docs">
+                    <a href="{% block homelink %} {% endblock %}">
                         Home
                     </a>
                 </li>

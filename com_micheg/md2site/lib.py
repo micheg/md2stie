@@ -43,7 +43,7 @@ class Staticizer:
             file_path = os.path.join(self.input_dir, md_file)
 
             with open(file_path, 'r') as _file:
-                DOCS[md_file] = markdown(_file.read(), extras=['metadata'])
+                DOCS[md_file] = markdown(_file.read(), extras=['metadata', 'fenced-code-blocks'])
 
         DOCS = {
             item: DOCS[item] for item in sorted(DOCS, key=lambda item: datetime.strptime(DOCS[item].metadata['date'], '%Y-%m-%d'), reverse=True)
@@ -91,7 +91,7 @@ class Staticizer:
 
             post_html = post_template.render(post=post_data)
 
-            post_file_path = '{output_dir}/DOCS/{slug}.html'.format(slug=post_metadata['slug'], output_dir=self.output_dir)
+            post_file_path = '{output_dir}/article/{slug}.html'.format(slug=post_metadata['slug'], output_dir=self.output_dir)
 
             os.makedirs(os.path.dirname(post_file_path), exist_ok=True)
             with open(post_file_path, 'w') as file:
