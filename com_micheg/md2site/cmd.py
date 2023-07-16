@@ -2,7 +2,6 @@
 
 Usage:
   md2site run --content=<path_to_content_dir> --output=<path_to_output_dir> --log=<path_to_logs_dir>
-  sharepoint_syncher version
 
 Options:
   -h --help                         Show this screen.
