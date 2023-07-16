@@ -1,6 +1,7 @@
 # libs
 import os
 import shutil
+import json
 from datetime import datetime
 # deps
 from jinja2 import Environment, PackageLoader
@@ -67,6 +68,7 @@ class Staticizer:
 
     def render_files(self):
         DOCS = self.DOCS
+        json_data = []
         post_template = self.env.get_template('post.html')
         for item in DOCS:
             post_metadata = DOCS[item].metadata
@@ -76,6 +78,16 @@ class Staticizer:
                 'title': post_metadata['title'],
                 'date': post_metadata['date'],
             }
+            
+            json_data.append(
+            {
+                'title': post_metadata['title'],
+                'subtitle': post_metadata['subtitle'],
+                'tags': post_metadata['tags'],
+                'date': post_metadata['date'],
+                'summary': post_metadata['summary'],
+                'slug': post_metadata['slug'],
+            })
 
             post_html = post_template.render(post=post_data)
 
@@ -84,4 +96,7 @@ class Staticizer:
             os.makedirs(os.path.dirname(post_file_path), exist_ok=True)
             with open(post_file_path, 'w') as file:
                 file.write(post_html)
-
+        
+        json_file_name = os.path.join(self.output_dir, 'data.json')
+        with open(json_file_name, 'w') as json_file:
+            json.dump(json_data, json_file)

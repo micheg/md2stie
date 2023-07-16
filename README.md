@@ -18,7 +18,20 @@ ex:
 
     md2site run --content=./content --output=./output --log=./logs
 
-## Disclaimer:
+## Formato dei metadati
+
+the system supports the following metadata format:
+
+    ---
+    title:
+    subtitle:
+    date:
+    tags:
+    summary:
+    slug:
+    ---
+
+## Disclaimer
 
 This is a small system that I wrote to manage my documentation, there is not much support for css and the like, I'm making it public just in case it could be of use to someone but without any guarantees.
 To modify the result it is necessary to edit the layout.html file.
