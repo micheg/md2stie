@@ -3,7 +3,7 @@ title: Pygame Tutorial: Building a Space Invaders Game
 date: 2023-07-17
 tags: Game, Python, dev
 summary: Pygame is a popular Python library for game development that provides an easy-to-use interface to create 2D games. 
-slug: phaser3-intro
+slug: pygamespace
 subtitle: In this tutorial, we will explore the basics of Pygame and build a classic Space Invaders game. Get ready for some alien-blasting fun!
 ---
 
