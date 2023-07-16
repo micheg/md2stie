@@ -35,6 +35,9 @@ the system supports the following metadata format:
 
 some AI generated articles are available as sample md files in the directory: **examples_of_mds**
 and are also visible on the site: https://michelangelo.altervista.org/md2ex
+try:
+
+    ./bin/md2site run --content=examples_of_mds --output=www --log=/tmp
 
 ## Disclaimer
 

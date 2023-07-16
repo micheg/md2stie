@@ -4,7 +4,7 @@ import shutil
 import json
 from datetime import datetime
 # deps
-from jinja2 import Environment, PackageLoader
+from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
 
 HOME_TEMPLATE = 'home.html'
@@ -25,6 +25,7 @@ class Staticizer:
         if not isExist:
             os.makedirs(self.output_dir)
         # loading templates
+        import pdb; pdb.set_trace()
         self.env = self.load_templates()
         # parsing documents
         self.DOCS = self.read_all_items()
@@ -52,7 +53,7 @@ class Staticizer:
         return DOCS
 
     def load_templates(self):
-        return Environment(loader=PackageLoader('main', self.template_dir))
+        return Environment(loader=FileSystemLoader(self.template_dir))
 
     def render_home(self):
         DOCS = self.DOCS
