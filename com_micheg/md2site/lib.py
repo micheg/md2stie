@@ -6,6 +6,7 @@ from datetime import datetime
 # deps
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
+from lunr import lunr
 
 HOME_TEMPLATE = 'home.html'
 DOC_TEMPLATE = 'post.html'
@@ -97,6 +98,9 @@ class Staticizer:
             with open(post_file_path, 'w') as file:
                 file.write(post_html)
         
-        json_file_name = os.path.join(self.output_dir, 'data.json')
+        idx = lunr(ref='slug', fields=('title', 'subtitle', 'summary', 'date', 'tags'), documents=json_data)
+        idx_data = idx.serialize()
+
+        json_file_name = os.path.join(self.output_dir, 'idx.json')
         with open(json_file_name, 'w') as json_file:
-            json.dump(json_data, json_file)
+            json.dump(idx_data, json_file)

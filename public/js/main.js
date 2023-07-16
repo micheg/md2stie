@@ -27,31 +27,10 @@ $(function ()
 {
     $('#sarchbox').hide();
     $.ajax({
-        url: 'data.json'
+        url: 'idx.json'
     }).done(function (data)
     {
-        window.$IDX = lunr(function ()
-        {
-            this.field('title');
-            this.field('subtitle');
-            this.field('summary');
-            this.field('date');
-            this.field('tags');
-
-            for (let i = 0; i < data.length; i++)
-            {
-                this.add(
-                {
-                    'id': data[i]['slug'],
-                    'title': data[i]['title'],
-                    'subtitle': data[i]['subtitle'],
-                    'date': data[i]['date'],
-                    'tags': data[i]['tags'],
-                    'summary': data[i]['summary'],
-                    'slug': data[i]['slug']
-                });
-            }
-        });
+        window.$IDX = lunr.Index.load((data));
         $('#sarchbox').show();
     });
 

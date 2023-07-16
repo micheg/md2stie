@@ -11,6 +11,7 @@ setup(
         'markdown2',
         'MarkupSafe',
         'docopt',
+        'lunr',
         'zc.lockfile'
     ],
     entry_points={
