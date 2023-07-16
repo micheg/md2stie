@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Documentations
+{% endblock %}
+
+
+{% block content %}
+
+<div class="flex three demo">
+
+    {% for doc in DOCS %}
+    <article>
+
+        <h4>{{ doc.title }} ({{ doc.date }})</h4>
+        <p>{{ doc.summary}}</p>
+        <a href="DOCS/{{ doc.slug }}.html">read more...</a>
+        <hr />
+        {% set list_of_tags = doc.tags.split(",") %}
+        {% for tag in list_of_tags %}
+        <mark>#{{ tag|trim }}</mark>
+        {% endfor %}
+    </article>
+
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}

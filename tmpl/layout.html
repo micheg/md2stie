@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/simple.min.css">
+    <style>
+        body > footer {grid-column: 1 / -1;}
+        .published { position: absolute; right: 1em; }
+        img.icon { display: inline; width: 1rem;}
+        article h4 {padding: 0; margin: 0;}
+    </style>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li>
+                    <a href="https://michelangelo.altervista.org/docs">
+                        Home
+                    </a>
+                </li>
+				<li>
+                    <a href="https://micheg.blogspot.com/">
+                        <img class="icon" src="/static/icons/blogger.svg" alt="Blog"/>
+                        Blog
+                    </a>
+                </li>
+				<li>
+                    <a href="https://github.com/micheg">
+                        <img class="icon" src="/static/icons/github.svg" alt="Github"/>
+                        Github
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/michelangelogiacomelli/">
+                        <img class="icon" src="/static/icons/linkedin.svg" alt="Linkedin"/>
+                        Linkedin
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/michelangelog/">
+                        <img class="icon" src="/static/icons/twitter.svg" alt="twitter"/>
+                        Twitter
+                    </a>
+                </li>
+			</ul>
+		</nav>
+        <h1>{{ self.title() }}</h1>
+        <p>{% block subtitle %} {% endblock %}</p>
+        {% block date %} {% endblock %}
+	</header>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+    <footer>
+        <p>
+            written by Michelangelo Giacomelli, contact me at: <a href="mailto:michelangelog@gmail.com">michelangelog@gmail.com</a>
+        </p>
+    </footer>
+</body>
+
+</html>

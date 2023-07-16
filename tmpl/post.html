@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {{post.content}}
+{% endblock %}   
+
+{% block title %}
+    {{post.title}}
+{% endblock %}
+
+{% block subtitle %}
+    {{post.subtitle}}
+{% endblock %}
+
+{% block date %}
+    <span class="published">Published at: {{post.date}}</span>
+{% endblock %}
